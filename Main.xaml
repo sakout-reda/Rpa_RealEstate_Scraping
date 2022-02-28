@@ -1,0 +1,323 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1448,4537" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/cv" xmlns:p1="http://schemas.uipath.com/workflow/activities/ocr" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing" xmlns:sd1="clr-namespace:System.Data;assembly=System.Data" xmlns:uc="clr-namespace:UiPath.CV;assembly=UiPath.CV" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="45">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.CV</x:String>
+      <x:String>UiPath.Shared.ObjectLibrary</x:String>
+      <x:String>UiPath.CV.Activities</x:String>
+      <x:String>UiPath.CV.Activities.Interfaces</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.Platform.Triggers</x:String>
+      <x:String>UiPath.Platform.Triggers.Scope</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.ExtractData</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="24">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.CV</AssemblyReference>
+      <AssemblyReference>UiPath.CV.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Main" sap:VirtualizedContainerService.HintSize="594,4472" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="city" />
+      <Variable x:TypeArguments="sd1:DataTable" Default="[New System.Data.DataTable]" Name="ExtractDataTable" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Ask for City" sap:VirtualizedContainerService.HintSize="552,238" sap2010:WorkflowViewState.IdRef="InputDialog_1" IsPassword="False" Label="Scrape property listing of : " Title="Location">
+      <ui:InputDialog.Result>
+        <OutArgument x:TypeArguments="x:String">[city]</OutArgument>
+      </ui:InputDialog.Result>
+    </ui:InputDialog>
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Open Property 24" sap:VirtualizedContainerService.HintSize="552,4102" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" IsIncognito="True" ScopeGuid="9d71b2af-b570-4112-a598-291ee797f561" Version="V1">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="518,3886" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DelayAfter="0" DelayBefore="0" DelayBetweenKeys="0" DisplayName="Type Into 'INPUT token-input-AutoC…'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="476,216" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="9d71b2af-b570-4112-a598-291ee797f561" Text="[city]" Version="V1">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable BrowserURL="https://www.property24.com/" DesignTimeRectangle="535, 293, 400, 29" ElementType="InputBox" FriendlyName="'INPUT token-input-AutoC…'" FullSelectorArgument="&lt;webctrl tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='text' aaname='' /&gt;" Guid="ba166937-8b2c-4587-bff0-8b7f59d28d42" ImageBase64="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" InformativeScreenshot="df0badd1ca4dd87fe16c949fc5f82b85.png" ScopeSelectorArgument="&lt;html app='chrome.exe' htmlwindowname='EcosystemId' title='Property for Sale: Houses for sale: Property24' /&gt;" SearchSteps="FuzzySelector, Image" WaitForReadyArgument="Complete" />
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="476,178" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_1" Shortcuts="[d(hk)][k(enter)][u(hk)]" Version="V1" />
+            <p:CVScope ContinueOnError="{x:Null}" Server="{x:Null}" CvMethod="ElementDetection, OCR" DelayBefore="0" DesignTimeCacheId="46f49364-9410-46ad-b5fe-1d54a1aad7d8" DisplayName="CV Screen Scope 'DIV  PropertyTypes'" sap:VirtualizedContainerService.HintSize="476,447" sap2010:WorkflowViewState.IdRef="CVScope_2" Version="V3">
+              <p:CVScope.Body>
+                <ActivityAction x:TypeArguments="x:Object">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="x:Object" Name="CVSessionData" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                    <p:CvClickWithDescriptor SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DelayBefore="0" DelayMS="0" Descriptor="[&quot;Target: ArrowButton (120,35,21,21)&quot;]" DesignTimeCacheId="46f49364-9410-46ad-b5fe-1d54a1aad7d8" DesignTimeScaleFactor="1" DisplayName="CV Click - ArrowButton" sap:VirtualizedContainerService.HintSize="400,136" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_2" InformativeScreenshot="c6ac054630109a564d97d4919a7ee86c" KeyModifiers="None" MouseButton="BTN_LEFT" Version="V3">
+                      <p:CvClickWithDescriptor.CursorPosition>
+                        <ui:CursorPosition Position="Center">
+                          <ui:CursorPosition.OffsetX>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:CursorPosition.OffsetX>
+                          <ui:CursorPosition.OffsetY>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:CursorPosition.OffsetY>
+                        </ui:CursorPosition>
+                      </p:CvClickWithDescriptor.CursorPosition>
+                      <p:CvClickWithDescriptor.DesignTimeDescriptor>
+                        <uc:CvDescriptor>
+                          <uc:CvDescriptor.Target>
+                            <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="120, 35, 21, 21" ElementType="ArrowButton" />
+                          </uc:CvDescriptor.Target>
+                        </uc:CvDescriptor>
+                      </p:CvClickWithDescriptor.DesignTimeDescriptor>
+                      <p:CvClickWithDescriptor.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="8ce72a50-10b5-4f2f-bef6-be82c929d5c3">
+                          <ui:Target.TimeoutMS>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:Target.TimeoutMS>
+                          <ui:Target.WaitForReady>
+                            <InArgument x:TypeArguments="ui:WaitForReady" />
+                          </ui:Target.WaitForReady>
+                        </ui:Target>
+                      </p:CvClickWithDescriptor.Target>
+                    </p:CvClickWithDescriptor>
+                  </Sequence>
+                </ActivityAction>
+              </p:CVScope.Body>
+              <p:CVScope.DesignTimeCacheContainer>
+                <uc:CvCacheContainer>
+                  <uc:CvCacheContainer.Caches>
+                    <scg:List x:TypeArguments="uc:CVCache" Capacity="1">
+                      <uc:CVCache DisplayName="Screen CV Click - ArrowButton (Main)" Id="46f49364-9410-46ad-b5fe-1d54a1aad7d8" InformativeScreenshot="fccddb38fe5bc3072e0ceb7eaec702f1" LogicalPosition="484, 333" OcrText="Property Type Any v" Position="484, 333" ScreenshotGuid="bfc4a605-f43b-42a2-9fcf-e38232d97a13" ServerVersion="1">
+                        <uc:CVCache.CvUiElements>
+                          <scg:List x:TypeArguments="uc:CvElementInfo" Capacity="4">
+                            <uc:CvElementInfo Category="Button" Confidence="Runtime" Region="1, 27, 152, 34" />
+                            <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="119, 34, 22, 21" />
+                            <uc:CvElementInfo Category="InputBox" Confidence="Runtime" Region="2, 27, 145, 34" />
+                            <uc:CvElementInfo Category="ArrowButton" Region="120, 35, 21, 21" />
+                          </scg:List>
+                        </uc:CVCache.CvUiElements>
+                        <uc:CVCache.OcrTexts>
+                          <scg:List x:TypeArguments="uc:OcrTextInfo" Capacity="4">
+                            <uc:OcrTextInfo Region="0, 3, 54, 17" Text="Property" />
+                            <uc:OcrTextInfo Region="56, 4, 32, 16" Text="Type" />
+                            <uc:OcrTextInfo Region="14, 38, 26, 16" Text="Any" />
+                            <uc:OcrTextInfo Region="121, 39, 17, 12" Text="v" />
+                          </scg:List>
+                        </uc:CVCache.OcrTexts>
+                      </uc:CVCache>
+                    </scg:List>
+                  </uc:CvCacheContainer.Caches>
+                </uc:CvCacheContainer>
+              </p:CVScope.DesignTimeCacheContainer>
+              <p:CVScope.OCREngine>
+                <ActivityFunc x:TypeArguments="sd:Image, scg:IEnumerable(scg:KeyValuePair(sd:Rectangle, x:String))">
+                  <ActivityFunc.Argument>
+                    <DelegateInArgument x:TypeArguments="sd:Image" Name="Image" />
+                  </ActivityFunc.Argument>
+                  <p1:UiPathScreenOCR ApiKey="{x:Null}" Endpoint="{x:Null}" Output="{x:Null}" Text="{x:Null}" UseLocalServer="{x:Null}" ComputeSkewAngle="False" ExtractWords="True" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="UiPathScreenOCR_1" Image="[Image]" Language="en" Profile="Screen" Scale="1" Timeout="100000" />
+                </ActivityFunc>
+              </p:CVScope.OCREngine>
+              <p:CVScope.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="69bff37a-729c-4581-a92f-50e5557a1cbb" InformativeScreenshot="65ee0bd8499c795e86ceaa9890456f78" Selector="&lt;webctrl id='PropertyTypes' tag='DIV' /&gt;" WaitForReady="INTERACTIVE">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                </ui:Target>
+              </p:CVScope.Target>
+              <p:CVScope.UseLocalServer>
+                <InArgument x:TypeArguments="x:Boolean" />
+              </p:CVScope.UseLocalServer>
+            </p:CVScope>
+            <uix:NClick ClickType="Single" DisplayName="Click 'Apartment / Flat'" sap:VirtualizedContainerService.HintSize="476,156" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="9d71b2af-b570-4112-a598-291ee797f561" Version="V1">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://www.property24.com/" DesignTimeRectangle="508, 466, 195, 34" ElementType="Text" FriendlyName="'Apartment / Flat'" FullSelectorArgument="&lt;webctrl aaname='Apartment / Flat' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Apartment / Flat' tag='LABEL' type='' check:text='Apartment / Flat' /&gt;" Guid="af87a61e-dfcb-4ffb-b145-aac9ec76a299" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAMcAAAAmCAYAAABwHY/hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAMlSURBVHhe7ZrLahsxFIb7ilnnGbLPLpu8QjcmGPISAb9FsDeBBLIo1CarFgptVqqO5mjm6HJsyfFlNP4/EGUszYyk838zA803AwDIAjkAUIAcAChADgAUIAcACpADAAXIAYAC5ABAAXIAoAA5AFCAHAAoQA4AFKrl+PX7j3l9/2le3n4UNxpP5wHQEtVyUND//vvkozJoPJ0HQEtUy0Fvgn3Y9zxQwcfC3N4tzIYPi1g9mKvrB7PkQzDQnhyumDfmdrHmH47J2jzd3ZunDz48E5vFfdF6tXHL+Y3bs7CxEFVyjGM/TkVzclChZ3Nb0Non5F48m9n1+cNAa94thx5cJ8f8mY8iquQYx36cisbk8MU5VZEakmPLJxXk2I+25KBCcgDSwHDhVjYk4vNhtuJugj/JfJPn0ycJBcj9S/3fH4PrXPlQ8ByWfhw1Fzy6fzS2h57qvs+PZ/ya5Nz6kEfn2aZKYs/X+urkiO/JfSSfmEe6xunRlBxSCBfi4EnJ4ZS/BYW3/UnfUGAvRVY4GQIOcT+uD80QsDiMueP+fL7e0N+tQ84jGK+wnOthje8fEMlB+zA8UFiUYG7Tl8LTkBxRYVwoZaG6UAVviuxvnrAvlY3IhCEKkw+QvEdwLTdPOd4iP4GS66Uy7JbDzjOZ+4CTgwQUrZ9v5v6ScF8y+zFh2pHDP2GjNoQmJ0IX3Dho8vyjy6HMO+z/ohz2Gtv63ZoL3xyO+BMKcpRxLjlyBU6farEc4jcu+NAfjj+aHLk3h+QAclB/uO6QGjncWLEP6R5DDpXzyJELvsUFzxerGyNDEBSaQhAXvUiO6L61cnB/GM612fiAFcqhhtvNcYt8lnI54rXwngZyZOowUZqQowtyLgAyeFw4+j8QKqhraYh9H4WPQrNdjkEiam5stRwdLqB8HX9/R4EcwWdOHHLqU8Xp2C2X6Hfz4XvRvOj6Yi3JfkyYajnG+7dVl/VU81BYL23Np6JajvH+Ve4lykFrzr1RwSGolmO8XOabAxyPCckBwGGBHAAoQA4AFCAHAAqQAwAFyAGAAuQAQAFyAKAAOQBQgBwAZDHmP1C1pe2gh7I1AAAAAElFTkSuQmCC" InformativeScreenshot="99ed60198e5ae02907f3a22c5db3bf23.png" ScopeSelectorArgument="&lt;html app='chrome.exe' htmlwindowname='EcosystemId' title='Property for Sale: Houses for sale: Property24' /&gt;" SearchSteps="FuzzySelector, Image" />
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uix:NClick ClickType="Single" DisplayName="Click 'Search'" sap:VirtualizedContainerService.HintSize="476,156" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="9d71b2af-b570-4112-a598-291ee797f561" Version="V1">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://www.property24.com/" DesignTimeRectangle="1187, 287, 135, 40" ElementType="Button" FriendlyName="'Search'" FullSelectorArgument="&lt;webctrl tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='BUTTON' type='' aaname='Search' check:text='Search' /&gt;" Guid="a2e1e7ce-d60c-43de-8acc-95519ef12c6c" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAIsAAAAsCAYAAABVAEupAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIMSURBVHhe7Zw7TsNAEEDpCZeh4AAI0dIggaBAiJNwgbQRp0AICYWaKmko6FNwAgRFZEVk8I53/d04U/CxwxvpybJ3vZE1LzNb7db2yZ0ARDm9l8H5owwunmTnaiLIAivZO77R6+DsQYXZEh9vB7sAFV4O9+Xy6DoTJq0wyAKtOGG00qQtCVlgLaEtIQusBVnADLKAGWQBM8gCZpAFzCALmEEWMIMsYAZZwAyygBlk+QHmz+8iH1OZR8b6zGbJMprK0n+Hxh8lDFm6joryLotR8Sx5TT/o9bY67xdAlq4znnUmQcjSdXwL+hxHxgJOqDyqVag6JrJ8HuZjmvy0QunVRahWtbYXfjvIkoT5Lv6gwn03myOLo5TwcrKVepvS+5kkOn4rn+VKoOsUc4MklTUbchZrNOZbRO4BmyVLIJemSLjbv9QFcs/iCUwTn75drxTlttK2H2rOH8riA1k6jSZUk5YlKxblBOr8UqyWJVuvUb08yNJHtMJkrSZWWXJiLaV0T2XJ2BBZfOWIJChPaG0f4piPvDxurPSuJjuNNllCqysEGEoyztZDlh5QbyONf76vIEWEDa4Xy4erQG6tVlkc+d4oi2U6x62HLPDvQRYwgyxgBlnADLKAGWQBM8gCZpAFzCALmEEWMIMsYAZZwAyygBlkARMcQAgmGkebhhIDsIr80OTYIIBSOY59Il+CC9K3R1a2fgAAAABJRU5ErkJggg==" InformativeScreenshot="0457d20ea75d99b2ff8fb31227c598c1.png" ScopeSelectorArgument="&lt;html app='chrome.exe' htmlwindowname='EcosystemId' title='Property for Sale: Houses for sale: Property24' /&gt;" SearchSteps="FuzzySelector, Image">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                      <uix:Target DesignTimeRectangle="1233, 297, 43, 19" ElementType="Text" FriendlyName="'Search'" FullSelectorArgument="&lt;webctrl aaname='Search' parentid='SearchBar' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Search' parentid='SearchBar' tag='SPAN' type='' check:text='Search' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAC8AAAAXCAYAAACbDhZsAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFBSURBVFhH7ZPLDYMwDIY7EzN0Pq6MwZUZuHQDDkxQwQEhVNzYeTkPUItoI6RY+lVRO87nR27PewFXVYZPpQyfShn+bE2PAWBsYYr4uFz4qoUVmH2Q4Bf6Hp7AB1gq65x7UUBfm+9/6Xv4pkvWaV8HOw/watwAR1igMXdKrg9gfZTGRzBigvSLpqfpram+W8PPOh4tsgHuzjMAfjnJXyv67mAmfw0v3inKY2M1tJMzaJbNEcRvNNaF1zJFWADcf78g/C8+KQEiTvud5Guw957C+BKW8VN4JbqAksjDMeMJKZ7ZNrzMF0xX6RR4OQG5GrHOG8VWYBf+1M6rzkYOmAu8PUZNlSoGfewsXS5sD16vpgUqYW5kvkOd98cedEZ12Jp+sKpQZTghzLULjzJvS9oqYjDfIfirKcOnUoZPpQvDF/AG8cEGDoxN2GcAAAAASUVORK5CYII=" SearchSteps="FuzzySelector, Image" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+            </uix:NClick>
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="476,2441" sap2010:WorkflowViewState.IdRef="Sequence_6">
+              <Sequence.Variables>
+                <Variable x:TypeArguments="x:String" Name="strDataTable" />
+                <Variable x:TypeArguments="sd1:DataTable" Name="builtData" />
+                <Variable x:TypeArguments="sd1:DataTable" Name="filtredData" />
+              </Sequence.Variables>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[ExtractDataTable]" DisplayName="Extract Table Data" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured'&gt;&#xD;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column0' Name='Price' Sort='Asc'&gt;&#xD;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xD;&#xA;&#x9;&lt;/Column&gt;&#xD;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column1' Name='NumBeds'&gt;&#xD;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xD;&#xA;&#x9;&lt;/Column&gt;&#xD;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column2' Name='NumShower'&gt;&#xD;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xD;&#xA;&#x9;&lt;/Column&gt;&#xD;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column7' Name='Surface'&gt;&#xD;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xD;&#xA;&#x9;&lt;/Column&gt;&#xD;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column3' Name='Adress'&gt;&#xD;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xD;&#xA;&#x9;&lt;/Column&gt;&#xD;&#xA;&#x9;&lt;Column xsi:type='DataNextLink' /&gt;&#xD;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;row exact='1'&gt;&lt;webctrl tag='div' idx='7' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='4' /&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='a' idx='1' /&gt;&lt;webctrl tag='span' idx='2' /&gt;&lt;/row&gt;&lt;column exact='1' name='Price' attr='text'&gt;&lt;webctrl tag='div' idx='7' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='4' /&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='a' idx='1' /&gt;&lt;webctrl tag='span' idx='2' /&gt;&lt;webctrl tag='span' idx='2' /&gt;&lt;webctrl tag='span' idx='1' /&gt;&lt;/column&gt;&lt;column exact='1' name='NumBed' attr='text'&gt;&lt;webctrl tag='div' idx='7' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='4' /&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='a' idx='1' /&gt;&lt;webctrl tag='span' idx='2' /&gt;&lt;webctrl tag='span' idx='4' /&gt;&lt;webctrl tag='span' idx='1' /&gt;&lt;webctrl tag='span' idx='1' /&gt;&lt;/column&gt;&lt;column exact='1' name='NumBath' attr='text'&gt;&lt;webctrl tag='div' idx='7' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='4' /&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='a' idx='1' /&gt;&lt;webctrl tag='span' idx='2' /&gt;&lt;webctrl tag='span' idx='4' /&gt;&lt;webctrl tag='span' idx='2' /&gt;&lt;webctrl tag='span' idx='1' /&gt;&lt;/column&gt;&lt;column exact='1' name='Surface' attr='text'&gt;&lt;webctrl tag='div' idx='7' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='4' /&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='a' idx='1' /&gt;&lt;webctrl tag='span' idx='2' /&gt;&lt;webctrl tag='span' idx='4' /&gt;&lt;webctrl tag='span' idx='4' /&gt;&lt;webctrl tag='span' idx='1' /&gt;&lt;/column&gt;&lt;column exact='1' name='Adress' attr='text'&gt;&lt;webctrl tag='div' idx='7' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='4' /&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='a' idx='1' /&gt;&lt;webctrl tag='span' idx='2' /&gt;&lt;webctrl tag='span' idx='2' /&gt;&lt;webctrl tag='span' idx='3' /&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="434,156" sap2010:WorkflowViewState.IdRef="NExtractData_1" LimitExtractionTo="Rows" MaximumResults="100" Version="V1">
+                <uix:NExtractData.NextLink>
+                  <uix:TargetAnchorable BrowserURL="https://www.property24.com/apartments-for-sale/midrand/gauteng/16" DesignTimeRectangle="1130, 670, 54, 13" ElementType="Text" FriendlyName="'Next'" FullSelectorArgument="&lt;webctrl aaname='             Next          ' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='             Next          ' tag='A' type='' check:text='Next' /&gt;" Guid="669fdbb8-3f2c-472b-9bf7-31b0dcf21a28" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADoAAAARCAYAAACM0L/dAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFOSURBVFhH7ZTBSsNAEIZ9Ad/Eo2+Tm32KUhDPfYHgxbPkZsCHWGiLEER7SntKKDl4MXoI/M5mZ+NmTdJmW0XSfhDCTDbLfJnJnmHgxHGMPM9xEh0KRyyaLOGNBM5HEQSnMI8oFvDCjBMO8B7TOcd/TIeoIfYvRDM83L3g9Z3DnnSKVl09gGgazvYULbB6XOBy/IwnB9lWUc+P1F3KNYgKX38MuiZLpGbOX1OUIZio+PpWSdrr++Mu295RKlYVTl21RKt8Ga0x5fUS9WyGIKy/s39HNSQbLnAhZT85tQOdoo3d1WL2pbtkjr7RuYOJFhsENwJX9wk+OLUL3aKEOaI10bbx+01RR0nJVlGz8ProNhXN/yUJChazR1fH/aFT11FSsl2U0GJmkWan1bNVdfiodd+HkR2X/3BSbtODAm9x6iQp+Sk6UE6iQ+PIRHN8AYjdjyC2OXIjAAAAAElFTkSuQmCC" ScopeSelectorArgument="&lt;html app='chrome.exe' htmlwindowname='EcosystemId' title='Apartments / flats for sale in Midrand : Midrand Property : Property24.com' /&gt;" SearchSteps="FuzzySelector, Image" />
+                </uix:NExtractData.NextLink>
+                <uix:NExtractData.Target>
+                  <uix:TargetAnchorable BrowserURL="https://www.property24.com/apartments-for-sale/midrand/gauteng/16/p36" DesignTimeRectangle="8, 79, 1903, 6381" FriendlyName="'Please note'" FullSelectorArgument="&lt;webctrl tag='DIV' /&gt;" Guid="a4ab84af-b26d-48d0-90d0-10c79d5d085c" InformativeScreenshot="2550f4991ecf87382ad0dc6fcc33a93e.png" ScopeSelectorArgument="&lt;html app='chrome.exe' htmlwindowname='EcosystemId' title='Apartments / flats for sale in Midrand : Midrand Property : Property24.com - Page 36' /&gt;" SearchSteps="Selector" />
+                </uix:NExtractData.Target>
+              </uix:NExtractData>
+              <ui:BuildDataTable DataTable="[builtData]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="434,59" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xD;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xD;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xD;&#xA;      &lt;xs:complexType&gt;&#xD;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xD;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xD;&#xA;            &lt;xs:complexType&gt;&#xD;&#xA;              &lt;xs:sequence&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Price&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;NumBed&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;NumBath&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Surface&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Adress&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;              &lt;/xs:sequence&gt;&#xD;&#xA;            &lt;/xs:complexType&gt;&#xD;&#xA;          &lt;/xs:element&gt;&#xD;&#xA;        &lt;/xs:choice&gt;&#xD;&#xA;      &lt;/xs:complexType&gt;&#xD;&#xA;    &lt;/xs:element&gt;&#xD;&#xA;  &lt;/xs:schema&gt;&#xD;&#xA;&lt;/NewDataSet&gt;" />
+              <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[ExtractDataTable]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="434,1524" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+                <ui:ForEachRow.Body>
+                  <ActivityAction x:TypeArguments="sd1:DataRow">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="sd1:DataRow" Name="CurrentRow" />
+                    </ActivityAction.Argument>
+                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,1403" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                      <Sequence.Variables>
+                        <Variable x:TypeArguments="x:String" Name="varPrice" />
+                        <Variable x:TypeArguments="x:String" Name="varBed" />
+                        <Variable x:TypeArguments="x:String" Name="varBath" />
+                        <Variable x:TypeArguments="x:String" Name="varSurface" />
+                        <Variable x:TypeArguments="x:String" Name="varAdress" />
+                      </Sequence.Variables>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:GetRowItem Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="Price" DisplayName="Get price" sap:VirtualizedContainerService.HintSize="334,185" sap2010:WorkflowViewState.IdRef="GetRowItem_1" Row="[CurrentRow]">
+                        <ui:GetRowItem.Value>
+                          <OutArgument x:TypeArguments="x:String">[varPrice]</OutArgument>
+                        </ui:GetRowItem.Value>
+                      </ui:GetRowItem>
+                      <ui:GetRowItem Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="NumBed" DisplayName="Get NumBed" sap:VirtualizedContainerService.HintSize="334,185" sap2010:WorkflowViewState.IdRef="GetRowItem_2" Row="[CurrentRow]">
+                        <ui:GetRowItem.Value>
+                          <OutArgument x:TypeArguments="x:String">[varBed]</OutArgument>
+                        </ui:GetRowItem.Value>
+                      </ui:GetRowItem>
+                      <ui:GetRowItem Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="NumBath" DisplayName="Get NumBath" sap:VirtualizedContainerService.HintSize="334,185" sap2010:WorkflowViewState.IdRef="GetRowItem_3" Row="[CurrentRow]">
+                        <ui:GetRowItem.Value>
+                          <OutArgument x:TypeArguments="x:String">[varBath]</OutArgument>
+                        </ui:GetRowItem.Value>
+                      </ui:GetRowItem>
+                      <ui:GetRowItem Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="Surface" DisplayName="Get Surface" sap:VirtualizedContainerService.HintSize="334,185" sap2010:WorkflowViewState.IdRef="GetRowItem_4" Row="[CurrentRow]">
+                        <ui:GetRowItem.Value>
+                          <OutArgument x:TypeArguments="x:String">[varSurface]</OutArgument>
+                        </ui:GetRowItem.Value>
+                      </ui:GetRowItem>
+                      <ui:GetRowItem Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="Adress" DisplayName="Get Adress" sap:VirtualizedContainerService.HintSize="334,185" sap2010:WorkflowViewState.IdRef="GetRowItem_5" Row="[CurrentRow]">
+                        <ui:GetRowItem.Value>
+                          <OutArgument x:TypeArguments="x:String">[varAdress]</OutArgument>
+                        </ui:GetRowItem.Value>
+                      </ui:GetRowItem>
+                      <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{varPrice,varBed,varBath,varSurface,varAdress}]" DataTable="[builtData]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="334,185" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
+                    </Sequence>
+                  </ActivityAction>
+                </ui:ForEachRow.Body>
+              </ui:ForEachRow>
+              <ui:FilterDataTable DataTable="[builtData]" DisplayName="Filter Data Table" FilterRowsMode="Remove" sap:VirtualizedContainerService.HintSize="434,160" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[filtredData]" SelectColumnsMode="Keep">
+                <ui:FilterDataTable.Filters>
+                  <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
+                    <ui:FilterOperationArgument Operand="{x:Null}" BooleanOperator="And" Operator="EMPTY">
+                      <ui:FilterOperationArgument.Column>
+                        <InArgument x:TypeArguments="x:String">["Surface"]</InArgument>
+                      </ui:FilterOperationArgument.Column>
+                    </ui:FilterOperationArgument>
+                  </scg:List>
+                </ui:FilterDataTable.Filters>
+                <ui:FilterDataTable.SelectColumns>
+                  <scg:List x:TypeArguments="InArgument" Capacity="4">
+                    <x:Null />
+                  </scg:List>
+                </ui:FilterDataTable.SelectColumns>
+              </ui:FilterDataTable>
+              <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="434,288" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" Visible="False" WorkbookPath="realEstate.xlsx">
+                <ui:ExcelApplicationScope.Body>
+                  <ActivityAction x:TypeArguments="ui:WorkbookApplication">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
+                    </ActivityAction.Argument>
+                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,179" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:ExcelWriteRange AddHeaders="True" DataTable="[filtredData]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteRange_1" SheetName="Sheet1" StartingCell="A1" />
+                    </Sequence>
+                  </ActivityAction>
+                </ui:ExcelApplicationScope.Body>
+              </ui:ExcelApplicationScope>
+            </Sequence>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-8, -8, 1936, 1056" BrowserType="Chrome" IconBase64="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" InformativeScreenshot="d27272543304fd99372df5df5cda970f.png" Selector="&lt;html app='chrome.exe' htmlwindowname='EcosystemId' title='Property for Sale: Houses for sale: Property24'/&gt;" Url="https://www.property24.com/" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>
